@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 19:52:44 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/14 19:22:26 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:34:49 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main (int argc, char **argv)
 		exit(EXIT_FAILURE);
 	load_img(&game); 
 	create_map(&game,game.img_size, game.img);
+	mlx_key_hook(keydata.)
 	mlx_loop(game.mlx);
 	delete_img(&game);
 	mlx_terminate(game.mlx); 

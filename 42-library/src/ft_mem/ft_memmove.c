@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 20:52:04 by cmorales          #+#    #+#             */
-/*   Updated: 2022/05/03 19:02:36 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/15 20:05:20 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	{
 		while (pos < n)
 		{
-		*(char *)(dst + pos) = *(char *)(src + pos);
-		pos++;
+			*(char *)(dst + pos) = *(char *)(src + pos);
+			pos++;
 		}
 	}
 	else
