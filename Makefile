@@ -8,11 +8,11 @@ SRC_DIR	=	./src/
 
 OBJ_DIR	=	./obj/
 
-SRCS =	so_long.c \
-		checker_map.c \
+SRCS =	checker_map.c \
 		map.c \
 		img.c\
 		utils.c \
+		movement.c \
 		main.c \
 
 OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))

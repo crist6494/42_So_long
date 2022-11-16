@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:21:34 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/15 19:33:59 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/16 20:29:48 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int height_of_the_map(t_map *map, char *path)
 		line = get_next_line(fd);
 	}
 	close(fd);
+	free(path);
 	return(y);
 }
 
@@ -70,7 +71,11 @@ void load_content_map(t_game *game, int img_size, t_img img)
 			if(game->map.tour[y][x] == 'C')
 				mlx_image_to_window(game->mlx, img.key, x * img_size, y * img_size);
 			if(game->map.tour[y][x] == 'P')
+			{
+				game->p_x = x;
+				game->p_y = y;
 				mlx_image_to_window(game->mlx, img.player, x * img_size, y * img_size);	
+			}
 			if(game->map.tour[y][x] == 'E')
 				mlx_image_to_window(game->mlx, img.exit, x * img_size, y * img_size);	
 			x++;

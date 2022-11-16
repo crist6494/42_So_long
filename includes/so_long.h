@@ -34,6 +34,8 @@ typedef struct s_img
 
 typedef struct	s_game 
 {
+	int 	p_x;
+	int		p_y;
 	mlx_t	*mlx;
 	int		img_size;
 	t_map	map;
@@ -50,5 +52,5 @@ void check_map(t_map *map, char *str);
 void create_map(t_game *game, int img_size, t_img img);
 void load_img(t_game *game);
 void delete_img(t_game *game);
-
+void movement(mlx_key_data_t keydata, void* param);
 #endif
