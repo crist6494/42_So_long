@@ -26,10 +26,14 @@ typedef struct	s_map
 typedef struct s_img
 {
 	mlx_image_t *key;
-	mlx_image_t *player;
+	mlx_image_t *player_r;
+	mlx_image_t *player_l;
+	mlx_image_t *player_f;
+	mlx_image_t *player_b;
 	mlx_image_t *ground;
 	mlx_image_t *wall;
-	mlx_image_t *exit;
+	mlx_image_t *exit_s;
+	mlx_image_t *exit_b;
 }t_img;
 
 typedef struct	s_game 
@@ -40,6 +44,8 @@ typedef struct	s_game
 	int		img_size;
 	t_map	map;
 	t_img	img;
+	int		steps;
+	int		points;
 }t_game;
 
 
@@ -49,8 +55,10 @@ int ft_find(char *str, char c);
 int height_of_the_map(t_map *map, char *path);
 void read_map(t_map *map, char *path);
 void check_map(t_map *map, char *str);
-void create_map(t_game *game, int img_size, t_img img);
+void create_map(t_game *game, int img_size, t_img *img);
 void load_img(t_game *game);
 void delete_img(t_game *game);
 void movement(mlx_key_data_t keydata, void* param);
+void change_image(int n, t_game *game);
+
 #endif

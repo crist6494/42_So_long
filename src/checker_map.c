@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:59:16 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/16 19:37:24 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/17 20:45:42 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,3 @@ void check_map(t_map *map, char *str)
 	check_border_map(map, map->tour);
 	check_content_map(map, map->tour);
 }
-
-
-
