@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 20:17:42 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/17 21:17:35 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/21 12:28:11 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ void	load_img(t_game *game)
 	game->img.player_b = mlx_texture_to_image(game->mlx, texture); 
 	mlx_delete_texture(texture);  
 	
-	texture = mlx_load_png("./assets/img/portal.png");
+	texture = mlx_load_png("./assets/img/portal2.png");
 	game->img.exit_s = mlx_texture_to_image(game->mlx, texture); 
 	mlx_delete_texture(texture);
-	texture = mlx_load_png("./assets/img/portal2.png");
+	texture = mlx_load_png("./assets/img/portal.png");
 	game->img.exit_b = mlx_texture_to_image(game->mlx, texture); 
 	mlx_delete_texture(texture);
 }

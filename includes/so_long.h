@@ -60,5 +60,7 @@ void load_img(t_game *game);
 void delete_img(t_game *game);
 void movement(mlx_key_data_t keydata, void* param);
 void change_image(int n, t_game *game);
+void	close_game(t_game *game);
+void	change_all_doors(int f, t_game *game);
 
 #endif
