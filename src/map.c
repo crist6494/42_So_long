@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:21:34 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/21 12:45:57 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/22 17:32:32 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void load_content_map(t_game *game, int img_size, t_img *img)
 			 	mlx_image_to_window(game->mlx, img->player_l, x * img_size, y * img_size);	
 				mlx_image_to_window(game->mlx, img->player_f, x * img_size, y * img_size);	
 				mlx_image_to_window(game->mlx, img->player_b, x * img_size, y * img_size);
-				change_image(0, game);	  
+				change_person_img(0, game);	  
 			}
 			if(game->map.tour[y][x] == 'E')
 			{
@@ -104,7 +104,7 @@ void create_map(t_game *game, int img_size, t_img *img)
 		x = 0;
 		while(x < game->map.size_x)
 		{
-			if (ft_strchr("10ECP", game->map.tour[y][x]))
+			if (ft_strchr("0CEP", game->map.tour[y][x]))
 				mlx_image_to_window(game->mlx, img->ground, x * img_size, y * img_size); 
 			if(game->map.tour[y][x] == '1')
 				mlx_image_to_window(game->mlx, img->wall, x * img_size, y * img_size);

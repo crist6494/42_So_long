@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:36:32 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/21 12:50:11 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/22 17:36:55 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ void	change_all_doors(int f, t_game *game)
 		game->img.exit_s->instances[0].enabled = true;
 }
 
-void change_image(int n, t_game *game)
+void change_person_img(int n, t_game *game)
 {
-
 	game->img.player_r->instances[0].enabled = false;
 	game->img.player_l->instances[0].enabled = false;
 	game->img.player_f->instances[0].enabled = false;
@@ -55,7 +54,7 @@ void	collect(t_game *game, int x, int y)
 				{
 					game->img.key->instances[count].enabled = false;
 					game->points++;
-					return;
+					//return;
 				}
 				if(game->map.tour[y][x] == 'C')
 					count++;
@@ -76,8 +75,9 @@ void	collect(t_game *game, int x, int y)
 	}
 }
 
-void change_position_of_player(int n, int sign, t_game *game)
+void move(int n, int sign, t_game *game)
 {
+	game->steps++;
 	if(n == 1)
 	{
 		game->img.player_r->instances[0].y += sign;
@@ -85,9 +85,9 @@ void change_position_of_player(int n, int sign, t_game *game)
 		game->img.player_f->instances[0].y += sign;
 		game->img.player_b->instances[0].y += sign;
 		if(sign < 0)
-			change_image(3, game);
+			change_person_img(3, game);
 		else
-			change_image(2, game);
+			change_person_img(2, game);
 	}
 	else
 	{
@@ -96,11 +96,10 @@ void change_position_of_player(int n, int sign, t_game *game)
 		game->img.player_f->instances[0].x += sign;
 		game->img.player_b->instances[0].x += sign;
 		if(sign < 0)
-			change_image(1, game);
+			change_person_img(1, game);
 		else
-			change_image(0, game);
+			change_person_img(0, game);
 	}
-	game->steps++;
 	ft_printf("pasos: %d, puntos: %d\n", game->steps, game->points);
 }
 
@@ -115,12 +114,12 @@ void movement(mlx_key_data_t keydata, void* param)
 	if (mlx_is_key_down(game->mlx, MLX_KEY_ESCAPE))
 		mlx_close_window(game->mlx);
 	else if (mlx_is_key_down(game->mlx, MLX_KEY_W) && game->map.tour[game->p_y - 1][game->p_x] != '1')
-		change_position_of_player(1, -64, game);
+		move(1, -64, game);
 	else if (mlx_is_key_down(game->mlx, MLX_KEY_S) && game->map.tour[game->p_y + 1][game->p_x] != '1')
-		change_position_of_player(1, +64, game);
+		move(1, +64, game);
 	else if (mlx_is_key_down(game->mlx, MLX_KEY_A) && game->map.tour[game->p_y][game->p_x - 1] != '1')
-		change_position_of_player(2, -64, game);
+		move(2, -64, game);
 	else if (mlx_is_key_down(game->mlx, MLX_KEY_D) && game->map.tour[game->p_y][game->p_x + 1] != '1')
-		change_position_of_player(2, +64, game);
+		move(2, +64, game);
 	collect(game, 0, 0);
 }
