@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:36:32 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/22 17:36:55 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/24 20:14:15 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,24 @@ void	change_all_doors(int f, t_game *game)
 		game->img.exit_b->instances[0].enabled = true;
 	else if (f == 1)	
 		game->img.exit_s->instances[0].enabled = true;
+	/* i++;
+	int i;
+	int max_doors; */
+
+/* 	i = 0;
+	max_doors = game->map.count_e;
+	while (i <= max_doors)
+	{
+		game->img.exit_b->instances[i].enabled = false;
+		game->img.exit_s->instances[i].enabled = false;
+
+		if(f == 0)
+			game->img.exit_b->instances[i].enabled = true;
+		else if (f == 1)	
+			game->img.exit_s->instances[i].enabled = true;
+		i++;
+	} */
+	
 }
 
 void change_person_img(int n, t_game *game)
@@ -29,7 +47,6 @@ void change_person_img(int n, t_game *game)
 	game->img.player_l->instances[0].enabled = false;
 	game->img.player_f->instances[0].enabled = false;
 	game->img.player_b->instances[0].enabled = false;
-
 	if(n == 0)
 		game->img.player_r->instances[0].enabled = true;
 	if(n == 1)
@@ -54,7 +71,8 @@ void	collect(t_game *game, int x, int y)
 				{
 					game->img.key->instances[count].enabled = false;
 					game->points++;
-					//return;
+					if(game->points == game->map.count_c)
+						game->img.exit_b->instances[0].enabled = true; 
 				}
 				if(game->map.tour[y][x] == 'C')
 					count++;
@@ -65,8 +83,6 @@ void	collect(t_game *game, int x, int y)
 	}
 	else if (game->points == game->map.count_c)
 	{
-		game->img.exit_s->instances[0].enabled= false;
-		game->img.exit_b->instances[0].enabled= true;
 		if (game->map.tour[game->p_y][game->p_x] == 'E')
 		{
 			ft_printf("\e[32;1mYOU WIN!\e[0m\n");

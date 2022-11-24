@@ -48,30 +48,30 @@ typedef struct	s_game
 
 
 /*--------Checker_map------------*/
-void check_args(t_map *map);
-void check_border_map(t_map *map, char **tour);
-void check_content_map(t_map *map, char **tour);
-void check_map(t_map *map, char *str);
+void	check_args(t_map *map);
+void	check_border_map(t_map *map, char **tour);
+void	check_content_map(t_map *map, char **tour);
+void	check_map(t_map *map, char *str);
 
 /*----------Map------------*/
-int height_of_the_map(t_map *map, char *path);
-void read_map(t_map *map, char *path);
-void create_map(t_game *game, int img_size, t_img *img);
+int		height_of_the_map(t_map *map, char *path);
+void	read_map(t_map *map, char *path);
+void	create_map(t_game *game, int img_size, t_img *img);
 
 /*----------Img------------*/
 void	load_img(t_game *game);
-void delete_img(t_game *game);
+void	delete_img(t_game *game);
 
 /*--------Movement------------*/
 void	change_all_doors(int f, t_game *game);
-void change_person_img(int n, t_game *game);
+void	change_person_img(int n, t_game *game);
 void	collect(t_game *game, int x, int y);
-void move(int n, int sign, t_game *game);
-void movement(mlx_key_data_t keydata, void* param);
+void	move(int n, int sign, t_game *game);
+void	movement(mlx_key_data_t keydata, void* param);
 
 /*--------Utils------------*/
-void print_error(char *msg);
-int ft_find(char *str, char c);
+void	print_error(char *msg);
+int		ft_find(char *str, char c);
 void	close_game(t_game *game);
 
 #endif

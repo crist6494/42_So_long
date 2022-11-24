@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:21:34 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/22 17:32:32 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/24 20:13:56 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void load_content_map(t_game *game, int img_size, t_img *img)
 				mlx_image_to_window(game->mlx, img->exit_s, x * img_size, y * img_size);	
 				mlx_image_to_window(game->mlx, img->exit_b, x * img_size, y * img_size);
 				change_all_doors(1, game);
+
 			}
 			x++;
 		}

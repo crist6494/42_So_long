@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:59:16 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/22 17:21:23 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/24 18:35:30 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ void	check_args(t_map *map)
 		if (ft_strncmp(".ber", suffix, ft_strlen(suffix)))
 		{
 			free(suffix);
-			print_error("Error\nIncorrect filename");
+			print_error("\033[0;31mError\nIncorrect filename");
 		}
 	}
 	else
-		print_error("Error\nIncorrect filename");
+		print_error("\033[0;31mError\nIncorrect filename");
 	free(suffix);
 }
 
@@ -49,13 +49,13 @@ void	check_border_map(t_map *map, char **tour)
 			if (y == 0 || y == map->size_y)
 			{
 				if (tour[y][x] != '1')
-					print_error("Error\nMap  is not enclosed by walls\n");
+					print_error("\033[0;31mError\nMap  is not enclosed by walls\n");
 			}
 			else if ((y > 0 && y < map->size_y) && (x == 0 || x == map->size_x
 					- 1))
 			{
 				if (tour[y][x] != '1')
-					print_error("Error\nMap  is not enclosed by walls\n");
+					print_error("\033[0;31mError\nMap  is not enclosed by walls\n");
 			}
 			x++;
 		}
@@ -85,9 +85,9 @@ void	check_content_map(t_map *map, char **tour)
 		y++;
 	}
 	if (map->count_c < 1 || map->count_e < 1 || map->count_p < 1)
-		print_error("Error\nMissing elements in the map\n");
+		print_error("\033[0;31mError\nMissing elements in the map\n");
 	if (map->count_p != 1)
-		print_error("Error\nOnly one player can be in the map\n");
+		print_error("\033[0;31mError\nOnly one player can be in the map\n");
 }
 
 void	check_map(t_map *map, char *str)
