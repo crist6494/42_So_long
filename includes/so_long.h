@@ -9,7 +9,6 @@
 #include <unistd.h>
 #include <memory.h>
 
-
 typedef struct	s_map 
 {
 	int size_x;
@@ -30,8 +29,7 @@ typedef struct s_img
 	mlx_image_t *player_b;
 	mlx_image_t *ground;
 	mlx_image_t *wall;
-	mlx_image_t *exit_s;
-	mlx_image_t *exit_b;
+	mlx_image_t **exit;
 }t_img;
 
 typedef struct	s_game 
@@ -63,15 +61,18 @@ void	load_img(t_game *game);
 void	delete_img(t_game *game);
 
 /*--------Movement------------*/
-void	change_all_doors(int f, t_game *game);
-void	change_person_img(int n, t_game *game);
 void	collect(t_game *game, int x, int y);
 void	move(int n, int sign, t_game *game);
 void	movement(mlx_key_data_t keydata, void* param);
 
+/*--------Movements_Utils------------*/
+void	change_all_doors(int f, t_game *game);
+void	change_person_img(int n, t_game *game);
+void	move_person(int n, int sign, t_game *game);
+void	finish_game(t_game *game);
+
 /*--------Utils------------*/
 void	print_error(char *msg);
 int		ft_find(char *str, char c);
-void	close_game(t_game *game);
 
 #endif

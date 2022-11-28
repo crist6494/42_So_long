@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:59:16 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/24 18:35:30 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:22:45 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ void	check_args(t_map *map)
 		if (ft_strncmp(".ber", suffix, ft_strlen(suffix)))
 		{
 			free(suffix);
-			print_error("\033[0;31mError\nIncorrect filename");
+			print_error("\033[0;31mError\nIncorrect filename\n");
 		}
 	}
 	else
-		print_error("\033[0;31mError\nIncorrect filename");
+		print_error("\033[0;31mError\nIncorrect filename\n");
 	free(suffix);
 }
 

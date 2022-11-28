@@ -13,6 +13,7 @@ SRCS =	checker_map.c \
 		img.c\
 		utils.c \
 		movement.c \
+		movement_utils.c \
 		main.c \
 
 OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))

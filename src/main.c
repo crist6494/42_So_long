@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 19:52:44 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/24 18:34:55 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/28 17:36:45 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ int	main(int argc, char **argv)
 		//Arrgelar cunaod solo pones so_long
 	}
 	else
-		print_error("\033[0;31mError\nMissing arguments");
+		print_error("\033[0;31mError\nMissing arguments\n");
 }

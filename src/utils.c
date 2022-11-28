@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:37:37 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/21 12:23:29 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:46:27 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,3 @@ int ft_find(char *str, char c)
 	return(0);
 }
 
-void	close_game(t_game *game)
-{
-	delete_img(game);
-	mlx_terminate(game->mlx);
-	exit(EXIT_SUCCESS);
-}
