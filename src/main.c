@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 19:52:44 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/28 17:36:45 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/29 21:04:06 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ int	main(int argc, char **argv)
 {
 	t_game	game;
 
-	(void)argc;
-	if(argc > 1)
-	{		
-		//atexit(ft_void);
+	if (argc > 1)
+	{
+		atexit(ft_void);
 		mlx_set_setting(MLX_STRETCH_IMAGE, 1);
 		ft_bzero(&game, sizeof(t_game));
 		check_map(&game.map, argv[1]);
@@ -43,6 +42,8 @@ int	main(int argc, char **argv)
 		mlx_loop(game.mlx);
 		delete_img(&game);
 		mlx_terminate(game.mlx);
+		//free(game.map.tour);
+		//free(game.map.path);
 		//Borrar los ._ y los .DS_Store
 		//Arrgelar cunaod solo pones so_long
 	}

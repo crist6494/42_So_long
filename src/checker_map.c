@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:59:16 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/28 20:22:45 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/29 21:00:16 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,7 @@ void	check_border_map(t_map *map, char **tour)
 				if (tour[y][x] != '1')
 					print_error("\033[0;31mError\nMap  is not enclosed by walls\n");
 			}
-			else if ((y > 0 && y < map->size_y) && (x == 0 || x == map->size_x
-					- 1))
+			else if ((y > 0 && y < map->size_y) && (x == 0 || x == map->size_x - 1))
 			{
 				if (tour[y][x] != '1')
 					print_error("\033[0;31mError\nMap  is not enclosed by walls\n");
@@ -99,8 +98,6 @@ void	check_map(t_map *map, char *str)
 	check_args(map);
 	map->size_y = height_of_the_map(map, map->path);
 	read_map(map, map->path);
-	// printf("%d\n", map->size_y);
-	// printf("%d", map->size_x);
 	check_border_map(map, map->tour);
-	check_content_map(map, map->tour);
+	check_content_map(map, map->tour); 
 }

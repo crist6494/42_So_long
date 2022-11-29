@@ -4,6 +4,18 @@
 	// Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
 	"version": "0.2.0",
 	"configurations": [
+		{
+			"name": "(lldb) Iniciar",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/so_long",
+			"args": ["map.ber"],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "lldb"
+		}
 		
 
 	]
