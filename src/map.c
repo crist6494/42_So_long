@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:21:34 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/29 21:02:39 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:34:30 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	height_of_the_map(t_map *map, char *path)
 		line = get_next_line(fd);
 	}
 	close(fd);
+	free(line);
 	free(path);
 	return (y);
 }
@@ -46,12 +47,12 @@ void	read_map(t_map *map, char *path)
 	len = map->size_x;
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
-		print_error("Error\nFailed when open the file");
+		print_error("\033[0;31mError\nFailed when open the file\n");
 	map->tour[y] = get_next_line(fd);
 	while (map->tour[y] != NULL)
 	{
 		if (len != ft_strlen(map->tour[y]) - 1)
-			print_error("Error\nMap is not rectangular");
+			print_error("\033[0;31mError\nMap is not rectangular\n");
 		y++;
 		map->tour[y] = get_next_line(fd);
 	}

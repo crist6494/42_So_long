@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 12:46:34 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/29 21:00:53 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:27:15 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	*ft_calloc(size_t c, size_t n)
 	if (!rest)
 		return (0);
 	ft_bzero(rest, (c * n));
+	//free(rest);
 	return (rest);
 }
 

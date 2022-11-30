@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 19:39:22 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/29 20:44:11 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:22:49 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	finish_game(t_game *game)
 	{
 		if (game->map.tour[game->p_y][game->p_x] == 'E')
 		{
-			ft_printf("\e[32;1mYOU WIN!\e[0m\n");
+			printf("\e[32;1mYOU WIN!\e[0m\n");
 			delete_img(game);
 			mlx_terminate(game->mlx);
 			exit(EXIT_SUCCESS);

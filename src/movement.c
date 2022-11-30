@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:36:32 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/29 20:56:52 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:22:12 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	collect(t_game *game, int x, int y)
 			{
 				game->points++;
 				game->img.key->instances[count].enabled = false;
-				ft_printf("pasos: %d, puntos: %d\n", (game->steps), game->points);
+				printf("pasos: %d, puntos: %d\n", (game->steps), game->points);
 				if (game->points == game->map.count_c)
 					change_all_doors(1, game);
 			}
@@ -49,7 +49,7 @@ void	move(int n, int sign, t_game *game)
 	y = 0;
 	move_person(n, sign, game);
 	if ((game->map.tour[game->p_y + (n == 1) * sign / 64][game->p_x + (n == 2) * sign / 64] != 'C'))
-		ft_printf("pasos: %d, puntos: %d\n", (game->steps), game->points);
+		printf("pasos: %d, puntos: %d\n", (game->steps), game->points);
 }
 
 void	movement(mlx_key_data_t keydata, void *param)

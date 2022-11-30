@@ -74,5 +74,6 @@ void	finish_game(t_game *game);
 /*--------Utils------------*/
 void	print_error(char *msg);
 int		ft_find(char *str, char c);
+void free_map(char **map);
 
 #endif

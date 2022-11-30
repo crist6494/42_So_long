@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:40:40 by cmorales          #+#    #+#             */
-/*   Updated: 2022/07/19 20:15:59 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/30 19:23:47 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <memory.h>
+
 
 /* Libft functions */
 

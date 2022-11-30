@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:59:16 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/29 21:00:16 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:06:47 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,5 @@ void	check_map(t_map *map, char *str)
 	map->size_y = height_of_the_map(map, map->path);
 	read_map(map, map->path);
 	check_border_map(map, map->tour);
-	check_content_map(map, map->tour); 
+	check_content_map(map, map->tour);
 }

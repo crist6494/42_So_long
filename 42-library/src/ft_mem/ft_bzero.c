@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmorales <cmorales@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 19:55:23 by cmorales          #+#    #+#             */
-/*   Updated: 2022/04/23 11:53:49 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/11/30 19:38:59 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
