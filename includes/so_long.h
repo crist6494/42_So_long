@@ -57,7 +57,8 @@ void	read_map(t_map *map, char *path);
 void	create_map(t_game *game, int img_size, t_img *img);
 
 /*----------Img------------*/
-void	load_img(t_game *game);
+void	load_env(t_game *game);
+void	load_p(t_game *game);
 void	delete_img(t_game *game);
 
 /*--------Movement------------*/
@@ -72,8 +73,10 @@ void	move_person(int n, int sign, t_game *game);
 void	finish_game(t_game *game);
 
 /*--------Utils------------*/
+void	ft_void(void);
+void 	free_map(char **map);
 void	print_error(char *msg);
 int		ft_find(char *str, char c);
-void free_map(char **map);
+void ft_exit(void);
 
 #endif

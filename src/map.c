@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:21:34 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/30 20:34:30 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/12/01 18:52:51 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	height_of_the_map(t_map *map, char *path)
 	}
 	close(fd);
 	free(line);
-	free(path);
 	return (y);
 }
 
@@ -62,21 +61,28 @@ void	read_map(t_map *map, char *path)
 void	load_texture_map(int l, t_game *game, int x, int y)
 {
 	if (l == 0)
-		mlx_image_to_window(game->mlx, game->img.key, x * game->img_size, y * game->img_size);
+		mlx_image_to_window(game->mlx, game->img.key, x
+			* game->img_size, y * game->img_size);
 	if (l == 1)
 	{
 		game->p_x = x;
 		game->p_y = y;
-		mlx_image_to_window(game->mlx, game->img.player_r, x * game->img_size, y * game->img_size);
-		mlx_image_to_window(game->mlx, game->img.player_l, x * game->img_size, y * game->img_size);
-		mlx_image_to_window(game->mlx, game->img.player_f, x * game->img_size, y * game->img_size);
-		mlx_image_to_window(game->mlx, game->img.player_b, x * game->img_size, y * game->img_size);
+		mlx_image_to_window(game->mlx, game->img.player_r, x
+			* game->img_size, y * game->img_size);
+		mlx_image_to_window(game->mlx, game->img.player_l, x
+			* game->img_size, y * game->img_size);
+		mlx_image_to_window(game->mlx, game->img.player_f, x
+			* game->img_size, y * game->img_size);
+		mlx_image_to_window(game->mlx, game->img.player_b, x
+			* game->img_size, y * game->img_size);
 		change_person_img(0, game);
 	}
 	if (l == 2)
 	{
-		mlx_image_to_window(game->mlx, game->img.exit[0], x * game->img_size, y * game->img_size);
-		mlx_image_to_window(game->mlx, game->img.exit[1], x * game->img_size, y * game->img_size);
+		mlx_image_to_window(game->mlx, game->img.exit[0], x
+			* game->img_size, y * game->img_size);
+		mlx_image_to_window(game->mlx, game->img.exit[1], x
+			* game->img_size, y * game->img_size);
 	}
 }
 
@@ -110,16 +116,19 @@ void	create_map(t_game *game, int img_size, t_img *img)
 	int	y;
 
 	y = 0;
-	load_img(game);
+	load_env(game);
+	load_p(game);
 	while (y < game->map.size_y)
 	{
 		x = 0;
 		while (x < game->map.size_x)
 		{
 			if (ft_strchr("0CEP", game->map.tour[y][x]))
-				mlx_image_to_window(game->mlx, img->ground, x * img_size, y * img_size);
+				mlx_image_to_window(game->mlx, img->ground, x
+					* img_size, y * img_size);
 			if (game->map.tour[y][x] == '1')
-				mlx_image_to_window(game->mlx, img->wall, x * img_size, y * img_size);
+				mlx_image_to_window(game->mlx, img->wall, x
+					* img_size, y * img_size);
 			x++;
 		}
 		y++;

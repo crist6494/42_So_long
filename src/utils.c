@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:37:37 by cmorales          #+#    #+#             */
-/*   Updated: 2022/11/30 20:45:26 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/12/01 18:48:15 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,22 @@
 void	print_error(char *msg)
 {
 	write(1, msg, ft_strlen(msg));
-	free(msg);
 	exit(1);
+}
+
+void	ft_void(void)
+{
+	system("leaks -q so_long");
+}
+
+void	free_map(char **map)
+{
+	int	i;
+
+	i = 0;
+	while (map[i])
+		free(map[i++]);
+	free(map);
 }
 
 int	ft_find(char *str, char c)
@@ -32,4 +46,9 @@ int	ft_find(char *str, char c)
 	}
 	free(str);
 	return (0);
+}
+
+void ft_exit(void)
+{
+	exit(0);
 }
