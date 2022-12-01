@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:37:37 by cmorales          #+#    #+#             */
-/*   Updated: 2022/12/01 18:48:15 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/12/01 19:01:12 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_find(char *str, char c)
 	return (0);
 }
 
-void ft_exit(void)
+void	ft_exit(void)
 {
 	exit(0);
 }
