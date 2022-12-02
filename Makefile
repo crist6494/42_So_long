@@ -37,10 +37,12 @@ lib:
 
 clean:
 	make clean -C ./42-library
+	make clean -C ./MLX42
 	rm -rf obj $(OBJS) 
 
 fclean: clean
 	make fclean -C ./42-library
+	make fclean -C ./MLX42
 	rm -rf obj $(NAME) 
 
 re: fclean all
