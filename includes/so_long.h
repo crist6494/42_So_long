@@ -1,40 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/20 12:16:59 by cmorales          #+#    #+#             */
+/*   Updated: 2023/01/20 12:20:29 by cmorales         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
 # include "../42-library/libft.h"
-#include"../MLX42/include/MLX42/MLX42.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <memory.h>
+# include "../MLX42/include/MLX42/MLX42.h"
+# include <stdlib.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <memory.h>
 
-typedef struct	s_map 
+typedef struct s_map
 {
-	int size_x;
-	int size_y;
-	int count_c;
-	int count_p;
-	int count_e;
-	char **tour;
-	char *path;
+	int		size_x;
+	int		size_y;
+	int		count_c;
+	int		count_p;
+	int		count_e;
+	char	**tour;
+	char	*path;
 }t_map;
 
 typedef struct s_img
 {
-	mlx_image_t *key;
-	mlx_image_t *player_r;
-	mlx_image_t *player_l;
-	mlx_image_t *player_f;
-	mlx_image_t *player_b;
-	mlx_image_t *ground;
-	mlx_image_t *wall;
-	mlx_image_t **exit;
+	mlx_image_t	*key;
+	mlx_image_t	*player_r;
+	mlx_image_t	*player_l;
+	mlx_image_t	*player_f;
+	mlx_image_t	*player_b;
+	mlx_image_t	*ground;
+	mlx_image_t	*wall;
+	mlx_image_t	**exit;
 }t_img;
 
-typedef struct	s_game 
+typedef struct s_game
 {
-	int 	p_x;
+	int		p_x;
 	int		p_y;
 	mlx_t	*mlx;
 	int		img_size;
@@ -43,7 +55,6 @@ typedef struct	s_game
 	int		steps;
 	int		points;
 }t_game;
-
 
 /*--------Checker_map------------*/
 void	check_args(t_map *map);
@@ -64,7 +75,7 @@ void	delete_img(t_game *game);
 /*--------Movement------------*/
 void	collect(t_game *game, int x, int y);
 void	move(int n, int sign, t_game *game);
-void	movement(mlx_key_data_t keydata, void* param);
+void	movement(mlx_key_data_t keydata, void *param);
 
 /*--------Movements_Utils------------*/
 void	change_all_doors(int f, t_game *game);
@@ -74,9 +85,9 @@ void	finish_game(t_game *game);
 
 /*--------Utils------------*/
 void	ft_void(void);
-void 	free_map(char **map);
+void	free_map(char **map);
 void	print_error(char *msg);
 int		ft_find(char *str, char c);
-void ft_exit(void);
+void	ft_exit(void);
 
 #endif
