@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:21:34 by cmorales          #+#    #+#             */
-/*   Updated: 2022/12/01 18:52:51 by cmorales         ###   ########.fr       */
+/*   Updated: 2023/03/29 19:33:25 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	read_map(t_map *map, char *path)
 	size_t	len;
 
 	y = 0;
-	map->tour = ft_calloc(map->size_y, map->size_x);
+	map->tour = ft_calloc(map->size_y + 1, map->size_x);
 	len = map->size_x;
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
